@@ -23,7 +23,7 @@ import sys
 import os.path
 from PyQt5.QtCore import Qt, QTimer
 from PyQt5.QtGui import QPalette, QColor
-from PyQt5.QtWidgets import QMainWindow, QWidget, QMacCocoaViewContainer, QFrame, QSlider, QHBoxLayout, QPushButton, \
+from PyQt5.QtWidgets import QMainWindow, QWidget, QFrame, QSlider, QHBoxLayout, QPushButton, \
     QVBoxLayout, QAction, QFileDialog, QApplication
 import vlc
 
@@ -50,6 +50,7 @@ class Player(QMainWindow):
 
         # In this widget, the video will be drawn
         if sys.platform == "darwin": # for MacOS
+            from PyQt5.QtWidgets import QMacCocoaViewContainer	
             self.videoframe = QMacCocoaViewContainer(0)
         else:
             self.videoframe = QFrame()
